@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lançamento Financeiro - EasyAdmin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra de navegação lateral -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>EasyAdmin</h2>
+            </div>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="cadastroProduto.html">Cadastro de Produtos</a></li>
+                <li><a href="cadastroVendas.html">Cadastro de Vendas</a></li>
+                <li><a href="financeiro.html">Financeiro</a></li>
+                <li><a href="estatistica.html">Estatística</a></li>
+            </ul>
+        </nav>
+
+
+        <!-- Área principal -->
+        <div class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Busca: venda, produto, lançamento financeiro">
+                </div>
+                <div class="user-profile">
+                    <span>FB</span>
+                </div>
+            </header>
+
+            <div class="content">
+                <header>
+                    <h1>Lançamento Financeiro</h1>
+                </header>
+                <main>
+                    <h2>Adicionar Lançamento</h2>
+                    <form class="finance-form">
+                        <div class="form-group">
+                            <label for="transactionDate">Data *</label>
+                            <input type="date" id="transactionDate" name="transactionDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="transactionType">Tipo de Transação *</label>
+                            <select id="transactionType" name="transactionType" required>
+                                <option value="entrada">Entrada</option>
+                                <option value="saida">Saída</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descrição *</label>
+                            <textarea id="description" name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Valor *</label>
+                            <input type="number" id="amount" name="amount" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Categoria *</label>
+                            <select id="category" name="category" required>
+                                <option value="alimentacao">Alimentação</option>
+                                <option value="transporte">Transporte</option>
+                                <option value="lazer">Sálario</option>
+                                <option value="saude">Manutenção</option>
+                                <option value="educacao">Estorno</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        <button type="submit">Salvar</button>
+                    </form>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lançamento Financeiro - EasyAdmin</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -14,11 +15,11 @@
                 <h2>EasyAdmin</h2>
             </div>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="cadastroProduto.html">Cadastro de Produtos</a></li>
-                <li><a href="cadastroVendas.html">Cadastro de Vendas</a></li>
-                <li><a href="financeiro.html">Financeiro</a></li>
-                <li><a href="estatistica.html">Estatística</a></li>
+                <li><i class="fas fa-home"></i> <a href="home.html">Home</a></li>
+                <li><i class="fas fa-box"></i>  <a href="cadastroProduto.html">Cadastro de Produtos</a></li>
+                <li> <i class="fas fa-shopping-cart"></i>  <a href="cadastroVendas.html">Cadastro de Vendas</a></li>
+                <li><i class="fas fa-file-invoice-dollar"></i>  <a href="financeiro.html">Financeiro</a></li>
+                <li><i class="fas fa-chart-bar"></i>  <a href="estatistica.html">Estatística</a></li>
             </ul>
         </nav>
 
@@ -35,7 +36,59 @@
             </header>
 
             <div class="content">
-             
+                <h1>Estatísticas</h1>
+                <div class="filters">
+                    <label for="dateRange">Período:</label>
+                    <input type="date" id="startDate">
+                    <span>até</span>
+                    <input type="date" id="endDate">
+                    <button>Aplicar Filtros</button>
+                </div>
+                <div class="statistics-dashboard">
+                    <div class="chart-container">
+                        <h3>Vendas Mensais</h3>
+                        <canvas id="monthlySalesChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Desempenho Financeiro</h3>
+                        <canvas id="financialPerformanceChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3>Produtos Mais Vendidos</h3>
+                        <canvas id="topProductsChart"></canvas>
+                    </div>
+                    <div class="table-container">
+                        <h3>Detalhes das Vendas</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Produto</th>
+                                    <th>Quantidade</th>
+                                    <th>Valor Total</th>
+                                    <th>Cliente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>01/05/2024</td>
+                                    <td>Produto A</td>
+                                    <td>10</td>
+                                    <td>R$ 1000,00</td>
+                                    <td>Cliente X</td>
+                                </tr>
+                                <tr>
+                                    <td>02/05/2024</td>
+                                    <td>Produto B</td>
+                                    <td>5</td>
+                                    <td>R$ 500,00</td>
+                                    <td>Cliente Y</td>
+                                </tr>
+                                <!-- Mais linhas -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

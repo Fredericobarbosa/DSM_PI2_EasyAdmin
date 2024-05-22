@@ -1,0 +1,6 @@
+#3a9ae9 -Azul
+#7F7F7F - Cinza
+#2ECC71 - Verde
+#FFFFFF -Branco
+#282829 -Preto
+

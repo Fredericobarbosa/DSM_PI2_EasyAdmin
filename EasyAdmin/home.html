@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lançamento Financeiro - EasyAdmin</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -14,11 +15,11 @@
                 <h2>EasyAdmin</h2>
             </div>
             <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="cadastroProduto.html">Cadastro de Produtos</a></li>
-                <li><a href="cadastroVendas.html">Cadastro de Vendas</a></li>
-                <li><a href="financeiro.html">Financeiro</a></li>
-                <li><a href="estatistica.html">Estatística</a></li>
+                <li><i class="fas fa-home"></i> <a href="home.html">Home</a></li>
+                <li><i class="fas fa-box"></i>  <a href="cadastroProduto.html">Cadastro de Produtos</a></li>
+                <li> <i class="fas fa-shopping-cart"></i>  <a href="cadastroVendas.html">Cadastro de Vendas</a></li>
+                <li><i class="fas fa-file-invoice-dollar"></i>  <a href="financeiro.html">Financeiro</a></li>
+                <li><i class="fas fa-chart-bar"></i>  <a href="estatistica.html">Estatística</a></li>
             </ul>
         </nav>
 
@@ -35,7 +36,35 @@
             </header>
 
             <div class="content">
-             
+                 <h1>Bem-vindo ao EasyAdmin</h1>
+                <div class="dashboard">
+                    <div class="widget">
+                        <h3>Visão Geral de Vendas</h3>
+                        <canvas id="salesOverviewChart"></canvas>
+                    </div>
+                    <div class="widget">
+                        <h3>Lançamentos Financeiros Recentes</h3>
+                        <ul id="recentTransactions">
+                            <li>Entrada: R$ 1000,00 - 01/05/2024</li>
+                            <li>Saída: R$ 500,00 - 02/05/2024</li>
+                            <li>Entrada: R$ 2000,00 - 03/05/2024</li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <h3>Tarefas e Atividades</h3>
+                        <ul id="tasks">
+                            <li>Concluir relatório financeiro - 05/05/2024</li>
+                            <li>Reunião com cliente - 06/05/2024</li>
+                            <li>Enviar proposta comercial - 07/05/2024</li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <h3>Notificações</h3>
+                        <ul id="notifications">
+                            <li>Pendências de pagamento - 04/05/2024</li>
+                            <li>Atualizar dados do cliente - 05/05/2024</li>
+                        </ul>
+                    </div>
             </div>
         </div>
     </div>

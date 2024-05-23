@@ -14,16 +14,13 @@ const ComponenteLogin ={
 const ComponenteCadastro ={
     template: `
         <div class="componente2">
-            <h1>Cadastre-se</h1>
-            <label>Nome*</label>
+            <h1>EasyAdmin</h1>
+            <h2>Cadastre-se</h2>
             <input placeholder="Nome" type="text"></input><br><br>
-            <label>Sobrenome*</label>
-            <input placeholder="Sobrenome" type="text"></input><br><br>
-            <label>Telefone*</label>
-            <input placeholder="Telefone (XX) XXXXXXXXX" type="text"></input><br><br>
-            <label>Email*</label>
             <input placeholder="Email" type="email"></input><br><br>
-            <label>Senha*</label>
+            <input placeholder="Nome da Empresa" type="text"></input><br><br>
+            <input placeholder="Telefone" type="text"></input><br><br>
+            <input placeholder="Tipo de Empresa" type="text"></input><br><br>
             <input placeholder="Senha" type="password"></input><br><br>
             <button @click="$emit('cadastro')">Cadastrar</button>
         </div>

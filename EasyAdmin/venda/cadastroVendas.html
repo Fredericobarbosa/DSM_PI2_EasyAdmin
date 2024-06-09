@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Vendas - EasyAdmin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+      <!-- Barra de navegação lateral -->
+      <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>EasyAdmin</h2>
+        </div>
+        <ul>
+            <li><i class="fas fa-home"></i> <a href="../home/home.html">Home</a></li>
+            <li><i class="fas fa-box"></i>  <a href="../produto/cadastroProduto.html">Cadastro de Produtos</a></li>
+            <li> <i class="fas fa-shopping-cart"></i>  <a href="../venda/cadastroVendas.html">Cadastro de Vendas</a></li>
+            <li><i class="fas fa-file-invoice-dollar"></i>  <a href="../financeiro/financeiro.html">Financeiro</a></li>
+            <li><i class="fas fa-chart-bar"></i>  <a href="../estatistica/estatistica.html">Estatística</a></li>
+        </ul>
+    </nav>
+
+
+        <!-- Área principal -->
+        <div class="main-content">
+                <header class="header">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Busca: venda, produto, lançamento financeiro">
+                    </div>
+                    <div class="user-profile">
+                        <span>##</span>
+                    </div>
+                </header>
+
+            
+            <!-- Área principal -->
+            <div class="main-content">
+                <div class="content">
+                    <header class="titulo">
+                        <h1>Registro de Vendas</h1>
+                    </header>
+                    <main>
+                        <h2>Adicionar Venda</h2>
+                        <form class="sale-form">
+                            <div class="form-group">
+                                <label for="saleDate">Data da Venda:</label>
+                                <input type="date" id="saleDate" name="saleDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="productsSold">Produtos Vendidos *</label>
+                                <div id="productsSoldContainer">
+                                    <input type="text" name="productsSold[]" required>
+                                    <button type="button" class="removeProductButton">Remover</button>  
+                                </div>
+                                <button type="button" id="addProductButton">Adicionar Produto</button>
+                                                        
+                            </div>
+                            <div class="form-group">
+                                <label for="totalValue">Valor Total da Venda:</label>
+                                <input type="number" id="totalValue" name="totalValue" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="clientInfo">Informações do Cliente:</label>
+                                <textarea id="clientInfo" name="clientInfo"></textarea>
+                            </div>
+                            <button type="submit">Salvar</button>
+                        </form>
+                        
+                        <h2>Vendas</h2>
+                        <table id="vendaTable">
+                            <thead>
+                                <tr>
+                                    <th>Número da Venda</th>
+                                    <th>Produtos Vendidos</th>
+                                    <th>Descrição</th>
+                                    <th>Valor Total</th>
+                                    <th>Cliente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- As vendas efetuadas aparecerão aqui -->
+                            </tbody>
+                        </table>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="script.js"></script>

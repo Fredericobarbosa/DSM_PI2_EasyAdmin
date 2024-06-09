@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto - EasyAdmin</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Barra de navegação lateral -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <h2>EasyAdmin</h2>
+            </div>
+            <ul>
+                <li><i class="fas fa-home"></i> <a href="../home/home.html">Home</a></li>
+                <li><i class="fas fa-box"></i>  <a href="../produto/cadastroProduto.html">Cadastro de Produtos</a></li>
+                <li> <i class="fas fa-shopping-cart"></i>  <a href="../venda/cadastroVendas.html">Cadastro de Vendas</a></li>
+                <li><i class="fas fa-file-invoice-dollar"></i>  <a href="../financeiro/financeiro.html">Financeiro</a></li>
+                <li><i class="fas fa-chart-bar"></i>  <a href="../estatistica/estatistica.html">Estatística</a></li>
+            </ul>
+        </nav>
+
+        <!-- Área principal -->
+        <div class="main-content">
+            <header class="header">
+                <div class="search-bar">
+                    <input type="text" placeholder="Busca: venda, produto, lançamento financeiro">
+                </div>
+                <div class="user-profile">
+                    <span>##</span>
+                </div>
+            </header>
+
+          
+        <!-- Área principal -->
+        <div class="main-content">
+            <div class="content">
+                <header class="titulo">
+                    <h1>Gerenciamento de Produtos</h1>
+                </header>
+                <main>
+                    <h2>Adicionar Produto</h2>
+                    <form id="productForm">
+                        <div>
+                            <label for="productId">Código</label>
+                            <input type="text" id="productId" required>
+                        </div>
+                        <div>
+                        <div>
+                            <label for="productName">Nome do Produto:</label>
+                            <input type="text" id="productName" required>
+                        </div>
+                        <div>
+                            <label for="productDescription">Descrição:</label>
+                            <textarea id="productDescription" required></textarea>
+                        </div>
+                        <div>
+                            <label for="productQuantity">Quantidade:</label>
+                            <input type="number" id="productQuantity" required>
+                        </div>
+                        <div>
+                            <label for="productPrice">Preço:</label>
+                            <input type="number" step="0.01" id="productPrice" required>
+                        </div>
+                        <button type="submit">Adicionar Produto</button>
+                    </form>
+                    
+                    <h2>Lista de Produtos</h2>
+                    <table id="productTable">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Quantidade</th>
+                                <th>Preço</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Produtos adicionados aparecerão aqui -->
+                        </tbody>
+                    </table>
+                </main>
+                <script>
+                    document.getElementById('productForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        
+                        const productName = document.getElementById('productName').value;
+                        const productDescription = document.getElementById('productDescription').value;
+                        const productQuantity = document.getElementById('productQuantity').value;
+                        const productPrice = document.getElementById('productPrice').value;
+                        
+                        const table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+                        const newRow = table.insertRow();
+                        
+                        const cell1 = newRow.insertCell(0);
+                        const cell2 = newRow.insertCell(1);
+                        const cell3 = newRow.insertCell(2);
+                        const cell4 = newRow.insertCell(3);
+                        
+                        cell1.textContent = productName;
+                        cell2.textContent = productDescription;
+                        cell3.textContent = productQuantity;
+                        cell4.textContent = productPrice;
+                        
+                        document.getElementById('productForm').reset();
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

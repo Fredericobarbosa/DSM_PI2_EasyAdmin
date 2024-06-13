@@ -365,4 +365,8 @@ http://localhost:3000/
 ----
 ##  Descrição final🗒️:
 ### O projeto desse jogo foi desenvolvido como parte de um trabalho acadêmico envolvendo a disciplina de "Engenharia de Software","Desenvolvimento Web II" e "Banco de Dados Relacional".
+----
+##Autores:
+### <a href="https://github.com/Fredericobarbosa">Frederico Pessoa Barbosa</a>
+### <a href="https://github.com/DSS255">Daniel Silva Santos</a>
 

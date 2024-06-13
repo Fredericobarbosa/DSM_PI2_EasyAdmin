@@ -1,5 +1,8 @@
 # EasyAdmin &copy;  ⚙️🕴🏻
 ---
+### <a href="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/tree/main/DocumentcaoPI2">Documentação PI</a>
+
+---
 ## Descrição:
 ### O projeto EasyAdmin é um sistema web integrado para a gestão empresarial, no qual foi projetado para facilitar a gestão de vendas, produtos e finanças. 
 ---
@@ -140,10 +143,7 @@ CREATE TABLE Cliente_Venda(
 );
 ```
 ---
-### Vídeo da aplicação rodando:
-<img src="" alt="DER"  width="95%">
 
----
 ### Como rodar o projeto:
 ### 1º Instalar todas as dependencias indicada pelo package.json (caso já tenha o node instalado)
 	npm install ou npm i
@@ -168,6 +168,10 @@ http://localhost:3000/
 ---
 ## Link do elevator pitch 🔗:
 ### https://youtu.be/EqD2igeww2A
+
+### Link da aplicação rodando:
+### 
+
 ----
 # 📝Observação importante: nem todo o sistema está funcional ainda, somente as rotas para faze a validação, cadastro de usário, e as referentes a produtos e financeiro. 
 ----

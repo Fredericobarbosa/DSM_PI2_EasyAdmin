@@ -211,6 +211,8 @@ app.post('/cadastrar_usuario', async (req, res) => {
 
 ```
 ```
+// Rotas para Produto
+// Rota para obter todos os produtos
 app.get('/buscar_produtos', async (req, res) => {
     try {
         await sql.connect(config);
@@ -355,10 +357,11 @@ http://localhost:3000/
 ### https://youtu.be/EqD2igeww2A
 
 ### Link da aplicação rodando:
-### 
+### https://youtu.be/e59qvenHVeI
 
 ----
-# 📝Observação importante: nem todo o sistema está funcional ainda, somente as rotas para faze a validação, cadastro de usário, e as referentes a produtos e financeiro. 
+# 📝Observação importante: nem todo o sistema está funcional ainda, somente as rotas para faze a validação, cadastro de usuário, e as referentes a produtos e financeiro. 
+# E caso haja erro em relação ao Banco de dados, ele pode estar desativado na Azure por conta de cobranças relacionadas ao serviços de hospedagem.
 ----
 ##  Descrição final🗒️:
 ### O projeto desse jogo foi desenvolvido como parte de um trabalho acadêmico envolvendo a disciplina de "Engenharia de Software","Desenvolvimento Web II" e "Banco de Dados Relacional".

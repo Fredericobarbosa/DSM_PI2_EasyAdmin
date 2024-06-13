@@ -161,7 +161,6 @@ http://localhost:3000/
 ```
 "mssql": "10.0.2",
 "vue": "3.4.27"
-Rodar o projeto
 ```
 ---
 ## Link do elevator pitch 🔗:

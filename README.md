@@ -142,6 +142,191 @@ CREATE TABLE Cliente_Venda(
      FOREIGN KEY (Id_Vendas) REFERENCES Vendas(Id_Vendas)
 );
 ```
+
+### Rotas Criadas(CRUD):
+```
+//Login
+app.post('/validar_usuario', async (req, res) => {
+    let { email, senha } = req.body;
+
+    email = email.trim()
+    senha = senha.trim()
+
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+
+        request.input('Email', sql.VarChar, email);
+        request.input('Senha', sql.VarChar, senha);
+
+        const result = await request.query(`
+        SELECT * FROM Usuario WHERE Email = @email AND Senha = @senha`);
+
+        if (result.recordset.length > 0) {
+            res.status(200).send('Usuário encontrado!');
+        } else {
+            res.status(401).send('Email ou senha inválidos.');
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Ocorreu um erro no servidor.');
+    }
+});
+
+app.post('/cadastrar_usuario', async (req, res) => {
+    let { nome, email, nomeEmpresa, telefone, tipoEmpresa, senha } = req.body;
+
+    nome = nome.trim()
+    email = email.trim()
+    nomeEmpresa= nomeEmpresa.trim()
+    telefone=telefone.trim()
+    tipoEmpresa= tipoEmpresa.trim()
+    senha = senha.trim()
+
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+
+        request.input('Nome', sql.VarChar, nome);
+        request.input('Email', sql.VarChar, email);
+        request.input('Nome_Empresa', sql.VarChar, nomeEmpresa);
+        request.input('Numero_Telefone', sql.VarChar, telefone);
+        request.input('Tipo_Empresa', sql.VarChar, tipoEmpresa);
+        request.input('Senha', sql.VarChar, senha);
+
+        await request.query(`
+        MERGE INTO Usuario AS target
+        USING (VALUES (@Nome, @Email, @Nome_Empresa, @Numero_Telefone, @Tipo_Empresa, @Senha)) 
+            AS source (Nome, Email, Nome_Empresa, Numero_Telefone, Tipo_Empresa, Senha)
+            ON target.Email = source.Email
+        WHEN NOT MATCHED THEN
+            INSERT (Nome, Email, Nome_Empresa, Numero_Telefone, Tipo_Empresa, Senha) VALUES (source.Nome, source.Email, source.Nome_Empresa, source.Numero_Telefone, source.Tipo_Empresa, source.Senha);
+        `);
+        res.status(200).send('Cadastro realizado com sucesso.');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Erro no servidor.');
+    }
+});
+
+```
+```
+app.get('/buscar_produtos', async (req, res) => {
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+        const produto_resultado = await request.query("SELECT * FROM Produtos");
+        // const produto = produto_resultado.recordset[1];
+        res.json(produto_resultado.recordset);
+    } catch (error) {
+        console.error('Erro ao buscar os produtos:', err);
+        res.status(500).json({ error: 'Erro ao buscar os produtos.' });
+    }
+});
+
+// Rota para adicionar um novo produto
+app.post('/cadastrar_produto', async (req, res) => {
+    let { nome, descricao, quantidade, preco, id_usuario } = req.body;
+
+    nome = nome.trim()
+    descricao = descricao.trim()
+
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+
+        request.input('Nome_Produto', sql.VarChar, nome);
+        request.input('Descricao', sql.VarChar, descricao);
+        request.input('Quantidade', sql.Int, quantidade);
+        request.input('Preco', sql.Float, preco);
+        request.input('Id_Usuario', sql.Int, id_usuario);
+
+        await request.query(`
+            INSERT INTO Produtos (Nome_Produto, Descricao, Quantidade, Preco, Id_Usuario)
+            VALUES (@Nome_Produto, @Descricao, @Quantidade, @Preco, @Id_Usuario);
+        `);
+        res.status(200).send('Cadastro realizado com sucesso.');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Erro no servidor.');
+    }
+});
+
+// Rota para excluir um produto
+app.delete('/deletar_produto/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const pool = await sql.connect(config);
+        const result = await pool.request()
+            .input('Id_Produtos', sql.Int, id)
+            .query('DELETE FROM Produtos WHERE Id_Produtos = @Id_Produtos');
+        res.status(200).json({ message: 'Produto excluído com sucesso.' });
+    } catch (err) {
+        console.error('Erro ao excluir produto:', err);
+        res.status(500).json({ error: 'Erro ao excluir produto.' });
+    }
+});
+```
+
+```
+// Rotas para o Financeiro
+// Rota para obter dados financeiros
+app.get('/buscar_financeiro', async (req, res) => {
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+        const financeiro_resultado = await new sql.Request().query('SELECT * FROM Financeiro');
+        res.json(financeiro_resultado.recordset);
+    } catch (error) {
+        console.error('Erro ao obter dados financeiros:', err);
+        res.status(500).json({ error: 'Erro ao obter dados financeiros.' });
+    }
+});
+
+// Rota para criar um novo lançamento financeiro
+app.post('/salvar_financeiro', async (req, res) => {
+    let { data, tipo, descricao, valor, categoria, id_usuario } = req.body;
+
+    descricao = descricao.trim()
+
+    try {
+        await sql.connect(config);
+        const request = new sql.Request();
+
+        request.input('Data_Transacao', sql.Date, data)
+        request.input('Tipo_Transacao', sql.VarChar, tipo);
+        request.input('Descricao', sql.VarChar, descricao);
+        request.input('Valor', sql.Float, valor);
+        request.input('Categoria', sql.VarChar, categoria);
+        request.input('Id_Usuario', sql.Int, id_usuario);
+ 
+        await request.query(`
+            INSERT INTO Financeiro (Data_Transacao,Tipo_Transacao, Descricao, Valor, Categoria, Id_Usuario)
+            VALUES (@Data_Transacao,@Tipo_Transacao, @Descricao, @Valor, @Categoria, @Id_Usuario)
+        `);
+
+        res.status(200).json({ message: 'Lançamento financeiro realizado com sucesso.' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Erro no servidor.');
+    }
+});
+
+// Rota para excluir um lançamento financeiro
+app.delete('/deletar_financeiro/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const pool = await sql.connect(config);
+        const result = await pool.request()
+            .input('Id_Financeiro', sql.Int, id)
+            .query('DELETE FROM Financeiro WHERE Id_Financeiro = @Id_Financeiro');
+        res.status(200).json({ message: 'Lançamento financeiro excluído com sucesso.' });
+    } catch (err) {
+        console.error('Erro ao excluir lançamento financeiro:', err);
+        res.status(500).json({ error: 'Erro ao excluir lançamento financeiro.' });
+    }
+});
+```
 ---
 
 ### Como rodar o projeto:

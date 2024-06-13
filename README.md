@@ -12,28 +12,31 @@
 ---
 ## Imagens da aplicação:
 ### Tela inicial:
-<img src="" alt="Tela incial"  width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/TelaInicial.PNG" alt="Tela incial"  width="95%">
 
 ### Tela de login:
-<img src="" alt="Tela de login" width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/TelaLogin.PNG" alt="Tela de login" width="95%">
 
 ### Tela de cadastro:
-<img src="" alt="Tela de cadastro" width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/TelaCadastro.PNG" alt="Tela de cadastro" width="95%">
 
 ### Home:
-<img src="" alt="Home" width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/Home.PNG" alt="Home" width="95%">
 
 ### Tela de gerenciamento produtos:
-<img src="" alt=" Gerenciamento Produtos" width="30%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/Produtos.PNG" alt=" Gerenciamento Produtos" width="95%">
 
 ### Tela registro de vendas:
-<img src="" alt=" Registro Vendas" width="30%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/Vendas.PNG" alt=" Registro Vendas" width="95%">
 
 ### Tela cadastro cliente:
-<img src="" alt="Cadastro Cliente"  width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/CadastroCliente.PNG" alt="Cadastro Cliente"  width="95%">
 
 ### Tela lançamento financeiro:
-<img src="" alt="Registro financeiro"  width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/Financeiro.PNG" alt="Registro financeiro"  width="95%">
+
+### Tela estátistica:
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/Estatistica.PNG" alt="Registro financeiro"  width="95%">
 
 ---
 ## Banco de dados:
@@ -165,6 +168,8 @@ http://localhost:3000/
 ---
 ## Link do elevator pitch 🔗:
 ### https://youtu.be/EqD2igeww2A
+----
+# 📝Observação importante: nem todo o sistema está funcional ainda, somente as rotas para faze a validação, cadastro de usário, e as referentes a produtos e financeiro. 
 ----
 ##  Descrição final🗒️:
 ### O projeto desse jogo foi desenvolvido como parte de um trabalho acadêmico envolvendo a disciplina de "Engenharia de Software","Desenvolvimento Web II" e "Banco de Dados Relacional".

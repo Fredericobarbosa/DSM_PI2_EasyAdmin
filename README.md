@@ -6,7 +6,7 @@
 ## Tecnologias Utilizadas 🛠️:
 ### Frontend: HTML, CSS, JavaScript, frameworks de ícones Font Awesome e Vue.js.
 
-### Backend: Node.js e SQL Server para gerenciamento do banco de dados.
+### Backend: Node.js (framework Express ) e SQL Server para gerenciamento do banco de dados.
 
 ### <a href="https://azure.microsoft.com/pt-br/get-started/azure-portal">Microsoft Azure</a> para a hospedagem do banco de dados. 
 ---
@@ -136,9 +136,33 @@ CREATE TABLE Cliente_Venda(
      FOREIGN KEY (Id_Vendas) REFERENCES Vendas(Id_Vendas)
 );
 ```
+---
 ### Vídeo da aplicação rodando:
 <img src="" alt="DER"  width="95%">
 
+---
+### Como rodar o projeto:
+### 1º Instalar todas as dependencias indicada pelo package.json (caso já tenha o node instalado)
+	npm install ou npm i
+ ### 2º Iniciar o servidor rodando o comando:
+ 
+ ```
+ node server.js
+
+ ```
+
+### 3º colocar na url de seu navegador:
+```
+http://localhost:3000/
+```
+### já que não foi feita o deploy do sistema.
+
+### Observação: para a criação deste projeto e das rotas no arquivo package.json foi adicionado as dependencias do Express:
+```
+"mssql": "10.0.2",
+"vue": "3.4.27"
+Rodar o projeto
+```
 ---
 ## Link do elevator pitch 🔗:
 ### https://youtu.be/EqD2igeww2A

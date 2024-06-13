@@ -38,10 +38,10 @@
 ---
 ## Banco de dados:
 ### Modelo Conceitual (DER):
-<img src="" alt="DER"  width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/Diagrama%20Entidade-Relacionamento(Der).PNG" alt="DER"  width="95%">
 
 ### Modelo Lógico (MER):
-<img src="" alt="MER"  width="95%">
+<img src="https://github.com/Fredericobarbosa/DSM_PI2_EasyAdmin/blob/main/Img_EasyAdmin/Modelo%20Entidade%20Relacionamento(Mer).PNG" alt="MER"  width="95%">
 
 ### Código do utilizado no banco:
 ```

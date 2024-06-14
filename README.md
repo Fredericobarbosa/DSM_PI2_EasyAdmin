@@ -364,7 +364,7 @@ http://localhost:3000/
 # E caso haja erro em relação ao Banco de dados, ele pode estar desativado na Azure por conta de cobranças relacionadas ao serviços de hospedagem.
 ----
 ##  Descrição final🗒️:
-### O projeto desse jogo foi desenvolvido como parte de um trabalho acadêmico envolvendo a disciplina de "Engenharia de Software","Desenvolvimento Web II" e "Banco de Dados Relacional".
+### O projeto desse sistema foi desenvolvido como parte de um trabalho acadêmico envolvendo a disciplina de "Engenharia de Software","Desenvolvimento Web II" e "Banco de Dados Relacional".
 ----
 ##Autores:
 ### <a href="https://github.com/Fredericobarbosa">Frederico Pessoa Barbosa</a>
